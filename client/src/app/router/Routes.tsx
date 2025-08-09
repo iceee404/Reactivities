@@ -2,8 +2,9 @@ import { createBrowserRouter } from "react-router";
 import App from "../layout/App";
 import HomePage from "../features/home/HomePage";
 import ActivityDashboard from "../features/activities/dashboard/ActivityDashboard";
-import ActivityDetail from "../features/activities/details/ActivityDetail";
+import ActivityDetail from "../features/activities/details/ActivityDetailPage";
 import ActivityForm from "../features/activities/form/ActivityForm";
+import Counter from "../features/activities/counter/Counter";
 
 export const router = createBrowserRouter([
   {
@@ -29,6 +30,10 @@ export const router = createBrowserRouter([
       {
         path: "createActivity",
         element: <ActivityForm key="create" />,
+      },
+      {
+        path: "counter",
+        element: <Counter />,
       },
     ],
   },
