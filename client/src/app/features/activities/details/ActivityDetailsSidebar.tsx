@@ -7,7 +7,7 @@ import {
   ListItemAvatar,
   Avatar,
   ListItemText,
-  Grid,
+  Grid2,
 } from "@mui/material";
 
 export default function ActivityDetailsSidebar() {
@@ -27,8 +27,8 @@ export default function ActivityDetailsSidebar() {
         <Typography variant="h6">2 people going</Typography>
       </Paper>
       <Paper sx={{ padding: 2 }}>
-        <Grid container alignItems="center">
-          <Grid size={8}>
+        <Grid2 container alignItems="center">
+          <Grid2 size={8}>
             <List sx={{ display: "flex", flexDirection: "column" }}>
               <ListItem>
                 <ListItemAvatar>
@@ -39,8 +39,8 @@ export default function ActivityDetailsSidebar() {
                 </ListItemText>
               </ListItem>
             </List>
-          </Grid>
-          <Grid
+          </Grid2>
+          <Grid2
             size={4}
             sx={{
               display: "flex",
@@ -62,8 +62,8 @@ export default function ActivityDetailsSidebar() {
                 Following
               </Typography>
             )}
-          </Grid>
-        </Grid>
+          </Grid2>
+        </Grid2>
       </Paper>
     </>
   );
