@@ -8,6 +8,9 @@ import Counter from "../features/activities/counter/Counter";
 import TestErrors from "../features/errors/TestErrors";
 import NotFound from "../features/errors/NotFound";
 import ServerError from "../features/errors/ServerError";
+import RequireAuth from "./RequireAuth";
+import LoginForm from "../features/activities/account/LoginForm";
+import RegisterForm from "../features/activities/account/RegisterForm";
 
 export const router = createBrowserRouter([
   {
@@ -15,35 +18,21 @@ export const router = createBrowserRouter([
     element: <App />,
     children: [
       {
-        path: "",
-        element: <HomePage />,
+        element: <RequireAuth />,
+        children: [
+          { path: "activities", element: <ActivityDashboard /> },
+          { path: "activities/:id", element: <ActivityDetail /> },
+          { path: "createActivity", element: <ActivityForm key="create" /> },
+          { path: "manage/:id", element: <ActivityForm /> },
+        ],
       },
-      {
-        path: "activities",
-        element: <ActivityDashboard />,
-      },
-      {
-        path: "activities/:id",
-        element: <ActivityDetail />,
-      },
-      {
-        path: "manage/:id",
-        element: <ActivityForm />,
-      },
-      {
-        path: "createActivity",
-        element: <ActivityForm key="create" />,
-      },
-      {
-        path: "counter",
-        element: <Counter />,
-      },
-      {
-        path: "errors",
-        element: <TestErrors />,
-      },
+      { path: "", element: <HomePage /> },
+      { path: "counter", element: <Counter /> },
+      { path: "errors", element: <TestErrors /> },
       { path: "not-found", element: <NotFound /> },
       { path: "server-error", element: <ServerError /> },
+      { path: "login", element: <LoginForm /> },
+      { path: "register", element: <RegisterForm /> },
       { path: "*", element: <Navigate replace to="/not-found" /> },
     ],
   },
